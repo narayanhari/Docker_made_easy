@@ -30,7 +30,8 @@ while True:
 		image_name=input("Which image you want to use : ")
 		vol_name=input("which volume and where you want to attach(volume:path) : ")
 		net_name=input("Enter network that you want to assosiate this  : ")
-		os.system("docker run -it --name {} --network {} -v {} {}".format(cont_name,net_name,vol_name,image_name))
+		link_name=input("from which container you want to link  : ")
+		os.system("docker run -it --name {} --link {} --network {} -v {}{}".format(cont_name,link_name,net_name,vol_name,image_name))
 		input("Enter to Continue")
 	elif x==4:
 		cont_name=input("Enter container name that you want to remove : ")
